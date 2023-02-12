@@ -51,9 +51,10 @@ app.post('/login', async(req, res)=>{
 })
 
 app.post('/cadastro', async(req, res)=>{
-    const user = new userModel(req.body)
+    const user = new userModel(req.body);
     //console.log(user);
     await user.save();
+    res.redirect('/cadastro');
 })
 
 app.set('view engine' , 'ejs')
