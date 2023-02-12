@@ -1,11 +1,12 @@
-const db = require('./loaders/mongoose.js')
+const db = require('./loaders/mongoose.js');
 const express = require('express');
 const session = require('express-session');
 const routes = require('./routes');
 const app = express();
-const Notas = require('./models/noteModel')
-const metodo = require('method-override')
-const parse = require('body-parser')
+const Notas = require('./models/noteModel');
+const userModel = require('./models/userModel');
+const metodo = require('method-override');
+const parse = require('body-parser');
 
 app.use(metodo('_method'))
 

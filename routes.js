@@ -13,6 +13,7 @@ routes.delete('/deletar/:id', noteController.deletar);
 routes.get('/buscar/:texto', noteController.pesquisar);
 routes.put('/atualizar/:id', noteController.update);
 routes.get('/edit/atualizar/:id', noteController.renderizarPagina);
+routes.get('/cadastro',  userController.renderizarCad);
 routes.get('/login',  userController.renderizarLog);
 
 module.exports = routes;
