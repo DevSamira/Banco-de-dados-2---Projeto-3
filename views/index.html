@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemonúcleo</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <section>
+        <div class="fade" onclick="fechar()"></div>
+        <header>
+            <div id="DataH">
+                <h1>Olá User</h1>
+            </div>
+        </header>
+
+        <div class="retangulosBA">
+            <div class="retanguloBuscarAdd" onclick="modalAcao()">
+                <div class="conteudoRBA">
+                    <ion-icon name="add-circle-outline"></ion-icon>
+                    <input type="text" name="Add" placeholder="Criar uma Nota..." disabled=""/>
+                </div>
+            </div>
+
+            <div class="retanguloBuscarAdd">
+                <div class="conteudoRBA">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <input type="text" name="Buscar" placeholder="Buscar" />
+                </div>
+            </div>
+        </div>
+        <div class="containerModal">
+            <div class="modal">
+                <div class="fecharModal" onclick="fechar()">
+                    <ion-icon name="close-circle-outline"></ion-icon>
+                </div>
+                <div class="containerCard">
+                    <input class="titulo1" type="text" name="titulo" placeholder="Título" />
+                    <textarea class="anotacoes" rows="19" placeholder="Anotações"></textarea>
+                </div>
+                <div class="btnCriar">
+                    <button id="criar"> <ion-icon name="add-circle-outline"></ion-icon>Criar </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="containerModal">
+            <div class="modalEdit">
+                <div class="fecharModal" onclick="fechar()">
+                    <ion-icon name="close-circle-outline"></ion-icon>
+                </div>
+                <div class="containerCard">
+                    <input class="titulo1" type="text" name="titulo" placeholder="Título" />
+                    <textarea class="anotacoes" rows="19" placeholder="Anotações"></textarea>
+                </div>
+                <div class="btnCriar">
+                    <button id="criar"> <ion-icon name="add-circle-outline"></ion-icon>Editar </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="containerCardsGeral">
+            <div class="Card">
+                <div class="iconsEditDelet">
+                    <ion-icon id="editar" name="create-outline" onclick="modalEdit()"></ion-icon>
+                    <ion-icon id="deletar" name="trash-outline"></ion-icon>
+                </div>
+                <div class="containerCard">
+                    <input class="titulo1" type="text" name="titulo" placeholder="Título" />
+                    <textarea rows="9" placeholder="Anotações"></textarea>
+                </div>
+            </div>
+                <div class="Card">
+                    <div class="iconsEditDelet">
+                        <ion-icon id="editar" name="create-outline" onclick="modalEdit()"></ion-icon>
+                        <ion-icon id="deletar" name="trash-outline"></ion-icon>
+                    </div>
+                    <div class="containerCard">
+                        <h3>Professores de ADS do IFPB</h3>
+                        <p>Se não há nada para refletir, um espelho se torna inútil.</p>
+                    </div>
+                </div>
+
+        </div>
+        <footer>
+            <img src="Footer.png" alt="">
+        </footer>
+    </section>
+</body>
+<script  type = "module"  src = "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" > </script> 
+<script  nomodule  src = "https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js" > </script>
+<script src="frontStyle.js"></script>
+</html>
+

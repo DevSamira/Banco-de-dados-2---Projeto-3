@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas - Banco de Dados</title>
+    <link rel="stylesheet" type="text/css" href="../views/styles.css" />
+
+    <style>
+body{
+    background: #C9E8F2;
+}
+
+#DataH h1, #DataH p{
+    display: flex;
+    margin-left: 100px;
+    margin-top: 0;
+    padding: 0;
+}
+
+#logo h1{
+    position: absolute;
+    width: 167px;
+    height: 24px;
+    left: 1155px;
+    top: 45px;
+}
+
+
+.retangulosBA{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.retanguloBuscarAdd{
+    width: 467px;
+    height: 48px;
+    background-color: #ADA7EC;
+    margin: 20px;
+    border-radius: 30px;
+}
+
+.conteudoRBA{
+    display: flex;
+    justify-content: left;
+    height: auto;
+}
+
+.conteudoRBA ion-icon {
+    font-size: 20px;
+    height: auto;
+    margin: 15px 10px 0 20px;
+}
+
+.conteudoRBA input{
+    margin-top: 15px;
+    background-color: transparent;
+    border: none;
+    width: 467px;
+    height: auto;
+}
+
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    background-color: transparent;
+}
+
+textarea{
+    resize:none;
+    width: 90%;
+    border: 0 none;
+    outline: 0;
+    background-color: transparent;
+}
+
+.conteudoRBA input:active{
+    border: none;
+    background-color: transparent;
+}
+
+
+.containerCard input{
+    background-color: transparent;
+    border: none;
+
+    justify-content: left;
+    text-align: left;
+    width: 98%;
+}
+
+.containerCard .titulo1{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.titulo1{
+    margin-top: 23px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size:medium;
+    font-weight: bold;
+}
+
+.containerModal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.containerModalEdit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    margin-top: 12%;
+}
+
+.modal , .modalEdit{
+    position: absolute;
+    margin-top: 25%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: rgba(64, 187, 244, 0.9);
+    border-radius: 30px;
+
+    width: 400px;
+    height: 400px;
+    /*background-color: #b9b9ed;*/
+    display: none;
+    color: #00000f;
+
+    animation: animate;
+    animation-duration: 800ms;
+    z-index: 5;
+}
+
+@keyframes animate {
+    from{opacity: 1;}
+    from{opacity: 0;}
+}
+
+.fecharModal{
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: flex-end;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    float: right;
+    margin: 0 10px 0 350px;
+}
+
+.fecharModal ion-icon{
+    font-size: 25px;
+    animation: animate1;
+    animation-duration: 800ms;
+}
+
+
+.fade{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 3;
+    display: none;
+}
+
+.containerCardsGeral{
+    display: flex;
+    justify-content: center;
+    margin: 0 0 35px 0;
+
+    flex-wrap: wrap;
+    padding-bottom: 23px;
+}
+
+#anotacoes{
+    width: 320px;
+    border: 0 none;
+    outline: 0;
+    background-color: transparent;
+}
+
+.btnCriar {
+    display: flex;
+    align-items: flex-end;
+    float: right;
+    margin: 0 20px 0 20px;
+}
+
+.btnCriar button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: aqua;
+    font-size: 14px;
+    border: none;
+}
+
+.btnCriar ion-icon{
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+.iconsEditDelet{
+    display: flex;
+    position: absolute;
+    justify-content: flex-end;
+    margin: 5px 10px 0 220px;
+    padding: 0;
+}
+
+.iconsEditDelet button{
+    margin: -2px;
+}
+
+.iconsEditDelet ion-icon{
+    margin-left: 1px;
+}
+
+.Card{
+    box-sizing: border-box;
+
+    position: relative;
+    width: 280px;
+    height: 200px;
+
+    margin: 9px 10px;
+
+    background: rgba(201, 232, 242, 0.5);
+    border: 4px solid #ADA7EC;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    padding-bottom: 23px;
+}
+
+.containerCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.containerCard p{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto 20px auto;
+    width: 90%;
+}
+
+#deletarButton{
+    background-color: transparent;
+    border: none;
+}
+
+#formPesquisar{
+    display: flex;
+    justify-content: left;
+    height: auto;
+}
+
+#inputTextPesquisar{
+    width: 320px;
+}
+
+#inputSubmitPesquisar{
+    margin-top: 13px;
+    width: 80px;
+    border-radius: 30px;
+    background-color: #C9E8F2;
+    border: none;
+}
+
+    </style>
+
+
+</head>
+<body>
+    <section>
+        <div class="fade" onclick="fechar()"></div>
+        <header>
+            <div id="DataH">
+                <h1>Olá</h1>
+            </div>
+        </header>
+
+        <div class="retangulosBA">
+            <div class="retanguloBuscarAdd" onclick="modalAcao()">
+                <div class="conteudoRBA">
+                    <ion-icon name="add-circle-outline"></ion-icon>
+                    <input type="text" name="Add" placeholder="Criar uma Nota..." disabled=""/>
+                </div>
+            </div>
+
+            <div class="retanguloBuscarAdd">
+                <div class="conteudoRBA">
+                    <form id="formPesquisar">
+                        <ion-icon name="search-outline"></ion-icon>
+                        <input type="text" name="txtPesquisa" placeholder="Pesquisar" id="inputTextPesquisar">
+                        <button id="inputSubmitPesquisar" type="button" onclick="pesquisarTxt()">Pesquisar</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="containerModal">
+            <div class="modal">
+                <div class="fecharModal" onclick="fechar()">
+                    <ion-icon name="close-circle-outline"></ion-icon>
+                </div>
+                <div class="containerCard">
+                    <form method="post">
+                        <input class="titulo1" type="text" name="title" placeholder="Título" />
+                        <textarea class="anotacoes" rows="19" name="content" placeholder="Anotações"></textarea>
+
+                        <div class="btnCriar">
+                            <button id="criar"> <ion-icon name="add-circle-outline"></ion-icon>Criar </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- inserir container de cards aqui> -->
+    </section>
+    <script>
+        let d = new Date();
+monName = new Array ("jan", "fev", "mar", "abr", "maio", "jun", "jul", "ago", "set", "out", "nov", "dez")
+const dataHora = d.getHours() + ":" + d.getMinutes() + " " + " - " + d.getDate () + " de " + monName [d.getMonth() ]   +  " de "  + d.getFullYear () + "."
+
+const para = document.createElement("p");
+para.innerHTML = dataHora;
+document.getElementById("DataH").appendChild(para);
+
+
+
+function modalAcao(){
+    let modal = document.querySelector('.modal').style.display = 'block';
+    let fundo = document.querySelector('.fade').style.display = 'block';
+}
+
+function fechar(){
+    let modal = document.querySelector('.modal').style.display = 'none';
+    let fundo = document.querySelector('.fade').style.display = 'none';
+    let modalEdit = document.querySelector('.modalEdit').style.display = 'none';
+    let fundoEdit = document.querySelector('.fade').style.display = 'none';
+}
+
+function modalEdit(){
+    let modal = document.querySelector('.modalEdit').style.display = 'block';
+    let fundo = document.querySelector('.fade').style.display = 'block';
+}
+
+function pesquisarTxt(){
+    let pesquisa = document.getElementById('inputTextPesquisar').value
+    window.location.href=`/buscar/${pesquisa}`
+}
+    </script>
+</body>
+<script  type = "module"  src = "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" > </script>
+<script  nomodule  src = "https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js" > </script>
+</html>
+
