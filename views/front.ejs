@@ -347,8 +347,31 @@ textarea{
                 </div>
             </div>
         </div>
+        <div class="containerCardsGeral">
+            <% for (items of items) { %>
 
-        <!-- inserir container de cards aqui> -->
+                <div class="Card">
+                    <div class="iconsEditDelet">
+                        <form action="/edit/atualizar/<%= items._id %>" method="get">
+                            <button id="deletarButton" type="submit"> <ion-icon id="editar" name="create-outline"></ion-icon></button>
+                        </form>
+                        <form method="post" action="/deletar/<%= items._id %>?_method=DELETE">
+                            <button id="deletarButton" type="submit"> <ion-icon id="deletar" name="trash-outline"></ion-icon></button>
+                        </form>
+                    </div>
+                    <div class="containerCard">
+                        <h3 id="titulo">
+                            <%= items.title %>
+                        </h3>
+                        <p id="nota">
+                            <%= items.content %>
+                        </p>
+                    </div>
+                </div>
+            <% } %>
+
+        </div>
+
     </section>
     <script>
         let d = new Date();

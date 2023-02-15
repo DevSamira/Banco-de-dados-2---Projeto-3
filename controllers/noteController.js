@@ -4,10 +4,9 @@ const noteModel = require('../models/noteModel');
 class noteController{
     async ler (req, res){
         if(req.session.login){
-            res.render('../views/front.ejs');
+            const items = await noteModel.find();
+            res.render('../views/front.ejs',{items: items});
         }
-        //const items = await noteModel.find()
-        //, {items : items}
     }
 
     async deletar (req, res) {
